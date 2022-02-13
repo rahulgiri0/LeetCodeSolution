@@ -15,7 +15,7 @@ class Solution {
         while(j<t.length() && i<s.length()){
             
             if(s.charAt(i)==t.charAt(j)){
-                System.out.println(i);
+               // System.out.println(i);
                 i++;
                 j++;
             }
