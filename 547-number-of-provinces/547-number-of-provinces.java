@@ -13,7 +13,7 @@ class Solution {
                 
                 if(isConnected[i][v]==1){
                 graph[i].add(new Edge(i,v));
-                graph[i].add(new Edge(v,i));
+                graph[v].add(new Edge(v,i));
                 }
             }
         }
