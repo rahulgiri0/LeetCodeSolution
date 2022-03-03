@@ -27,7 +27,7 @@ class Solution {
          if(c<o){
              str.append(")");
             util(n,o,c+1,str,ans);
-             str.deleteCharAt(str.length()-1);
+            str.deleteCharAt(str.length()-1);
         }
         
         
