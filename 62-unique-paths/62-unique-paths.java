@@ -7,7 +7,7 @@ class Solution {
     public int util(int m, int n, int[][] memo){
        if (m < 0 || n < 0) {
       return 0;
-    }  if (m == 0 || n == 0) {
+    }  if (m == 0 && n == 0) {
       return 1;
     }  if (memo[n][m] > 0) {
       return memo[n][m];
