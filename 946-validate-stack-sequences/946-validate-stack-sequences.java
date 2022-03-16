@@ -10,7 +10,7 @@ class Solution {
             }
         }
         
-        System.out.println(j);
+        
         return j==popped.length;
     }
 }
