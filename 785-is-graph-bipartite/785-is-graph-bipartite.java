@@ -23,12 +23,12 @@ class Solution {
         while(q.size()>0){
             
             Pair rem = q.poll();
-            System.out.println(rem.v+"->"+rem.level);
+         //   System.out.println(rem.v+"->"+rem.level);
             if(visited[rem.v]==-1){
                 visited[rem.v]=rem.level;
                 
                 for(int e: graph[rem.v]){
-                    System.out.println(e);
+                    //System.out.println(e);
                     if(visited[e]==-1){
                         q.offer(new Pair(e,rem.level+1));
                     }
@@ -36,7 +36,7 @@ class Solution {
             }
             
             else{
-    System.out.println("vtc"+ visited[rem.v]+ "level:"+ rem.level);
+   // System.out.println("vtc"+ visited[rem.v]+ "level:"+ rem.level);
                 if(rem.level!=visited[rem.v])
                     return false;
             
