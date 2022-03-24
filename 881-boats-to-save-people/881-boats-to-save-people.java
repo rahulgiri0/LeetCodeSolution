@@ -6,11 +6,17 @@ class Solution {
         int e = people.length-1;
         int boat=0;
         while(s<=e){
-            boat++;
-            if(people[s]+people[e]<=limit)
+           
+            if(people[s]+people[e]<=limit){
+                boat++;
                 s++;
-            
-            e--;
+                e--;
+            }
+           else{
+               boat++;
+               e--;
+           } 
+           
         }
         
         return boat;
