@@ -9,8 +9,10 @@ class Solution {
                 pq.poll();
         }
         
-        while (k > 0)
-            ans[--k] = pq.poll()[1];
+        while (k > 0){
+            k--;
+            ans[k] = pq.poll()[1];
+        }
         
         return ans;
     }
