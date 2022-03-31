@@ -20,7 +20,7 @@ class Solution {
             int mid = s + (e-s)/2;
             
             if(isPossible(nums,mid,m)){
-                
+                System.out.println(mid);
                 ans=mid;
                 e=mid-1;
             }
@@ -47,7 +47,7 @@ class Solution {
                     if(count>m || n>mid){
                         return false;
                     }
-                    else 
+                   
                         sum=n;
                 }
             }
