@@ -7,8 +7,8 @@ class Solution {
  
    
     int start = 0;
- 
-    for(int end = 0; end < s.length(); end++)
+ int end = 0;
+    while( end < s.length())
     {
     
       if(map.containsKey(s.charAt(end)))
@@ -20,6 +20,7 @@ class Solution {
     
       map.put(s.charAt(end), end);
       maximum_length = Math.max(maximum_length, end-start + 1);
+        end++;
     }
         
         
