@@ -20,6 +20,7 @@ class Solution {
 
            image[sr][sc]=newColor;
        }
+        
         isvisited[sr][sc]=true;
         fill( image,  sr-1, sc,  newColor, isvisited,key);
         fill( image,  sr, sc-1,  newColor,isvisited,key);
