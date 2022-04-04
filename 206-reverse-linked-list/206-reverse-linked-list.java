@@ -16,7 +16,7 @@ class Solution {
         ListNode next=head.next;
         ListNode newHead = reverseList(head.next);
         next.next=head;
-        head.next=null;
+        head.next=null;   // resolve cycle in list
         
         
         return newHead;
