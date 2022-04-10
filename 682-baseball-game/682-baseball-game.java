@@ -1,27 +1,24 @@
 class Solution {
     public int calPoints(String[] ops) {
-        List<Integer> score = new ArrayList<>();
+      Stack<Integer> stack = new Stack();
         
         for(String op:ops){
-            try{
-                score.add(Integer.parseInt(op));
-            }
-            catch(NumberFormatException ex){
-                if(op.equals("C")){
-                    score.remove(score.size()-1);
-                }
-                
-                else if(op.equals("D")){
-                    score.add(2*score.get(score.size()-1));
-                }
-                else{
-                    score.add(score.get(score.size()-1)+score.get(score.size()-2));
-                }
+            if (op.equals("+")) {
+                int top = stack.pop();
+                int newtop = top + stack.peek();
+                stack.push(top);
+                stack.push(newtop);
+            } else if (op.equals("C")) {
+                stack.pop();
+            } else if (op.equals("D")) {
+                stack.push(2 * stack.peek());
+            } else {
+                stack.push(Integer.valueOf(op));
             }
         }
         
         
-        int totalScore = score.stream().reduce(0, (subtotal, element) -> subtotal + element);
+        int totalScore = stack.stream().reduce(0, (subtotal, element) -> subtotal + element);
         return totalScore;
     }
 }
