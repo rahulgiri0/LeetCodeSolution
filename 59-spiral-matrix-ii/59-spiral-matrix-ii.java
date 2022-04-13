@@ -12,7 +12,7 @@ class Solution {
 		int count = 0;
         
         while(count<nel){
-        for(int i=minRow;i<=maxRow && count < nel;i++){
+        for(int i=minCol;i<=maxCol && count < nel;i++){
             ans[minRow][i]=val;
             val++;
             count++;
