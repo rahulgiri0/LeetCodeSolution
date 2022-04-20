@@ -41,10 +41,9 @@ class BSTIterator {
             cur = cur.right;
             while(cur != null){
                 stack.push(cur);
-                if(cur.left != null)
+               
                     cur = cur.left;
-                else
-                    break;
+                
             }
         }
         return node.val;
