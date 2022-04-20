@@ -21,10 +21,9 @@ class BSTIterator {
         TreeNode cur = root;
         while(cur != null){
             stack.push(cur);
-            if(cur.left != null)
+           
                 cur = cur.left;
-            else
-                break;
+            
         }
     }
 
