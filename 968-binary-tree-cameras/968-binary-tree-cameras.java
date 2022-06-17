@@ -25,6 +25,7 @@ class Solution {
     int camera =0;
     public int minCameraCover(TreeNode root) {
         
+        // any of child is covered then parent need to hv one
         if(util(root)==-1) camera++;
         return camera;
     }
