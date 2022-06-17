@@ -13,6 +13,14 @@
  *     }
  * }
  */
+
+
+// 1: -> i am covered
+
+// 0: -> i have camera
+
+// -1: -> i need camera
+
 class Solution {
     int camera =0;
     public int minCameraCover(TreeNode root) {
