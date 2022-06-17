@@ -39,11 +39,15 @@ class Solution {
         int lc = util(root.left);
         int rc = util(root.right);
         
-        if(lc==-1 || rc ==-1){
+        
+        // any of child don't have camera then parent needs to hv one
+        if(lc==-1 || rc ==-1){   
             camera++;
             return 0;
         }
         
+        
+        //any of child have camera then parent is covered
         if(lc ==0 || rc ==0){
             return 1;
         }
