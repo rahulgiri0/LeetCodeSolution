@@ -1,24 +1,23 @@
 class Solution {
     public List<List<Integer>> generate(int numRows) {
-        List<List<Integer>> pascal = new ArrayList<List<Integer>>();
+        List<List<Integer>> ans = new ArrayList<>();
         
-        
-        for(int i=0;i<numRows;i++){
-            ArrayList<Integer> p = new ArrayList<>();
-            for(int j=0;j<=i;j++){
-                if(j==0 || j==i){
-                    p.add(1);
-                }
+        for(int i =0; i<numRows;i++){
+            List<Integer> r = new ArrayList<>();
+            for(int j = 0; j<=i ;j++){
                 
-                else if(j<i){
-                    p.add(pascal.get(i-1).get(j-1)+pascal.get(i-1).get(j));
-                }
+                if(j == 0 || j == i)
+                    r.add(1);
                 
+                else{
+                    
+                    r.add(ans.get(i-1).get(j)+ans.get(i-1).get(j-1));
+                }
             }
             
-            pascal.add(p);
+            ans.add(r);
         }
         
-        return pascal;
+        return ans;
     }
 }
