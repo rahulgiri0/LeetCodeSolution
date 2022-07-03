@@ -18,12 +18,12 @@ class Solution {
     
     
     public int rob2(int[] nums) {
-        int[] dp = new int[nums.length+1];
+        int[] dp = new int[nums.length];
        
         
         
         
-        for(int i = 0; i<dp.length-1;i++){
+        for(int i = 0; i<dp.length;i++){
             
             if(i ==0 )
             dp[i]=nums[i];
