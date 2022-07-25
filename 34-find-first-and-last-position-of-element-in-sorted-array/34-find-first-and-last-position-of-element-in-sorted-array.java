@@ -1,57 +1,50 @@
 class Solution {
     public int[] searchRange(int[] nums, int target) {
-        int fo=-1;
-        int lo=-1;
-        int[] ans = new int[2];
-        if(nums.length==1 && nums[0]==target){
-            ans[0]=0;
-            ans[1]=0;
-            
-            return ans;
-        }
         
-        int s=0;
-        int e=nums.length-1;
+       
         
-        while(s<=e){
-            int mid= (s+e)/2;
+        int start = 0;
+        int end = nums.length -1;
+        
+        int left =-1;
+        int right =-1;
+        
+        while(start<=end){
             
-            if(nums[mid]<target){
-                s=mid+1;
+            
+            int mid = start+(end-start)/2;
+            
+            if(nums[mid]>target){
+                end = mid-1;
             }
-            else if(nums[mid]>target){
-                e=mid-1;
-            }
+            else if(nums[mid]<target)
+                start = mid+1;
+            
             else{
                 
-                fo=mid;
-                lo=mid;
+                 left = mid;
+                 right = mid;
                 
-               
+                while(left>=0 && nums[left] == target)
+                    left--;
                 
-                while(fo>=0 && nums[fo]==target){
-                    fo--;
-                }
+                left=left+1;
                 
-                fo+=1;
+                while(right <=nums.length-1 && nums[right] == target)
+                    right++;
                 
-                
-                 while(lo<=nums.length-1 && nums[lo]==target){
-                    lo++;
-                }
-                
-                lo-=1;
+                right = right-1;
                 
                 break;
-                
             }
+            
         }
         
+        int[] ans = new int[2];
         
-        ans[0]=fo;
-        ans[1]=lo;
+        ans[0]=left;
+        ans[1] = right ;
         
         return ans;
-        
     }
 }
