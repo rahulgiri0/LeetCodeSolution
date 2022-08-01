@@ -22,6 +22,7 @@ class Solution {
         return right+down;
     }
     
+    // memoization
      public int uniquePaths(int  i, int j, int m, int n, int[][] memo){
         
         if(i<0 || i>m-1 || j<0 || j>n-1)
