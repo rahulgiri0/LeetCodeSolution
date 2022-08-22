@@ -1,26 +1,16 @@
 class Solution {
-    public boolean ans;
     public boolean isPowerOfFour(int n) {
         
-        if(n==0){
+        if( n == 1)
+            return true;
+        
+        if( n ==0)
             return false;
-        }
         
-        if(n==1){
-            ans=true;
-            return ans;
-        }
+        if(n%4 == 0)
+          return  isPowerOfFour(n/4);
         
-        if(n%4==0){
-            ans= isPowerOfFour(n/4);
-        }
-        else{
-            ans=false;
-            return ans;
-        }
-           
-        
-        return ans;
-        
+        else
+            return false;
     }
 }
