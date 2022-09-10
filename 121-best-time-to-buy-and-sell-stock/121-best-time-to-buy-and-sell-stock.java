@@ -1,15 +1,15 @@
 class Solution {
     public int maxProfit(int[] prices) {
-        int leastValue = Integer.MAX_VALUE;
-        int psf=0;
-        int maxProfit =0;
+        int lv = Integer.MAX_VALUE;
+        int psf =0;
+        int mp = 0;
         
-        for(Integer p:prices){
-            leastValue = Math.min(p,leastValue);
-            psf = p-leastValue;
-            maxProfit = Math.max(psf,maxProfit);
+        for(Integer p: prices){
+            lv = Math.min(p,lv);
+            psf = p-lv;
+            mp = Math.max(mp,psf);
         }
         
-        return maxProfit;
+        return mp;
     }
 }
