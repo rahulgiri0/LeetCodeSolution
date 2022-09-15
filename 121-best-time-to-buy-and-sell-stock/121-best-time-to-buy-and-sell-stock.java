@@ -1,15 +1,16 @@
 class Solution {
     public int maxProfit(int[] prices) {
-        int lv = Integer.MAX_VALUE;
-        int psf =0;
-        int mp = 0;
+       int psf =0;
+        int max = 0;
+        int buy = Integer.MAX_VALUE;
         
-        for(Integer p: prices){
-            lv = Math.min(p,lv);
-            psf = p-lv;
-            mp = Math.max(mp,psf);
+        for(int p:prices){
+            buy = Math.min(buy,p);
+            psf = p-buy;
+            
+            max = Math.max(max,psf);
         }
         
-        return mp;
-    }
+        return max;
+}
 }
