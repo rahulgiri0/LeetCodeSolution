@@ -35,11 +35,11 @@ class Solution {
             for(int i =1; i<=n;i++){
                 TreeNode temp = q.poll();
                 
-                
+                 levelNode.add(temp.val);
                 if(temp.left != null) q.offer(temp.left);
                  if(temp.right != null) q.offer(temp.right);
                 
-                levelNode.add(temp.val);
+               
             }
             
             ans.add(levelNode);
